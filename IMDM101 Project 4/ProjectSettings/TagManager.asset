@@ -38,12 +38,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-  - name: player
-    uniqueID: 2276009983
+  - name: background sky
+    uniqueID: 3870366075
+    locked: 0
+  - name: middle trees
+    uniqueID: 738385397
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: ground
     uniqueID: 1373039015
     locked: 0
-  - name: Default
-    uniqueID: 0
+  - name: player
+    uniqueID: 2276009983
+    locked: 0
+  - name: front trees
+    uniqueID: 39605191
     locked: 0
