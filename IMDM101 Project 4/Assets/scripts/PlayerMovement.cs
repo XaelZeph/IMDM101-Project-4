@@ -1,7 +1,10 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Animator animator;
+
     private float horizontal;
     private float speed = 8f;
     private float jumpingPower = 16f;
@@ -11,8 +14,27 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    float timeRelative = 0;
+
+    bool running = false;
+
+    const string idle1 = "idle 1";
+    const string idle2 = "idle 2";
+    const string idle3 = "idle 3";
+    const string idle4 = "sleep";
+    const string run = "run";
+    const string jump = "jump";
+    const string jumpInPlace = "jump 2";
+
+    void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     void Update()
     {
+        timeChecker();
+
         horizontal = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetButtonDown("Jump") && IsGrounded())
@@ -31,6 +53,22 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        
+        if (horizontal > 0f) {
+            running = true;
+        }
+        else{
+            running = false;
+        }
+        animator.SetBool("running", running);
+
+        animator.SetBool("grounded", IsGrounded());
+
+    }
+
+    private void timeChecker() 
+    {
+        timeRelative = Time.time % 20;
     }
 
     private bool IsGrounded()
