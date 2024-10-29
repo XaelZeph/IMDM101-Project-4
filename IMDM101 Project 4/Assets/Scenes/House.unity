@@ -490,10 +490,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: player
       objectReference: {fileID: 0}
-    - target: {fileID: 4950714351159569781, guid: 86479320eec530744b33501f13397e0a, type: 3}
-      propertyPath: m_TagString
-      value: Respawn
-      objectReference: {fileID: 0}
     - target: {fileID: 6090668871647802799, guid: 86479320eec530744b33501f13397e0a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -7.15
@@ -911,7 +907,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.4062543
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2

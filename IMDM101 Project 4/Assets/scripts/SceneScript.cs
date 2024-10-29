@@ -14,7 +14,7 @@ public class SceneScript : MonoBehaviour
         // You can change the tag and manually change this accordingly.
 
         Debug.Log(other.tag);
-        if (other.tag == "Respawn")
+        if (other.tag == "Player")
         {
             // Print out the current scene's name
             Debug.Log(SceneManager.GetActiveScene().name);
