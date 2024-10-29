@@ -33,7 +33,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        timeChecker();
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
@@ -63,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("running", running);
 
         animator.SetBool("grounded", IsGrounded());
+        
+        timeChecker();
+        animator.SetFloat("timeRelative", timeRelative);
 
     }
 
